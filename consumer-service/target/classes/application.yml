@@ -1,0 +1,8 @@
+server:
+  servlet:
+    contextPath: /consumer-service
+    port: 8082
+
+management:
+  port: 8082
+  address: 127.0.0.1

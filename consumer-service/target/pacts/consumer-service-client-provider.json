@@ -1,0 +1,323 @@
+{
+  "provider": {
+    "name": "client-provider"
+  },
+  "consumer": {
+    "name": "consumer-service"
+  },
+  "interactions": [
+    {
+      "description": "a request to create a new client",
+      "request": {
+        "method": "POST",
+        "path": "/client-provider/client",
+        "headers": {
+          "Content-Type": "application/json"
+        },
+        "body": {
+          "lastName": "string",
+          "address": "string",
+          "phoneNumber": 100,
+          "name": "string",
+          "age": 100
+        },
+        "matchingRules": {
+          "body": {
+            "$.name": {
+              "matchers": [
+                {
+                  "match": "type"
+                }
+              ],
+              "combine": "AND"
+            },
+            "$.lastName": {
+              "matchers": [
+                {
+                  "match": "type"
+                }
+              ],
+              "combine": "AND"
+            },
+            "$.address": {
+              "matchers": [
+                {
+                  "match": "type"
+                }
+              ],
+              "combine": "AND"
+            },
+            "$.age": {
+              "matchers": [
+                {
+                  "match": "integer"
+                }
+              ],
+              "combine": "AND"
+            },
+            "$.phoneNumber": {
+              "matchers": [
+                {
+                  "match": "integer"
+                }
+              ],
+              "combine": "AND"
+            }
+          }
+        },
+        "generators": {
+          "body": {
+            "$.name": {
+              "type": "RandomString",
+              "size": 20
+            },
+            "$.lastName": {
+              "type": "RandomString",
+              "size": 20
+            },
+            "$.address": {
+              "type": "RandomString",
+              "size": 20
+            },
+            "$.age": {
+              "type": "RandomInt",
+              "min": 0,
+              "max": 2147483647
+            },
+            "$.phoneNumber": {
+              "type": "RandomInt",
+              "min": 0,
+              "max": 2147483647
+            }
+          }
+        }
+      },
+      "response": {
+        "status": 200,
+        "headers": {
+          "Content-Type": "application/json"
+        },
+        "body": {
+          "user": {
+            "name": "FmKqp",
+            "lastName": "AOeah",
+            "address": "Street kgAFtH",
+            "age": 62,
+            "phoneNumber": 986260919
+          },
+          "activated": true
+        },
+        "matchingRules": {
+          "body": {
+            "$.activated": {
+              "matchers": [
+                {
+                  "match": "type"
+                }
+              ],
+              "combine": "AND"
+            },
+            "$.user.name": {
+              "matchers": [
+                {
+                  "match": "type"
+                }
+              ],
+              "combine": "AND"
+            },
+            "$.user.lastName": {
+              "matchers": [
+                {
+                  "match": "type"
+                }
+              ],
+              "combine": "AND"
+            },
+            "$.user.address": {
+              "matchers": [
+                {
+                  "match": "type"
+                }
+              ],
+              "combine": "AND"
+            },
+            "$.user.age": {
+              "matchers": [
+                {
+                  "match": "integer"
+                }
+              ],
+              "combine": "AND"
+            },
+            "$.user.phoneNumber": {
+              "matchers": [
+                {
+                  "match": "integer"
+                }
+              ],
+              "combine": "AND"
+            }
+          }
+        },
+        "generators": {
+          "body": {
+            "$.user.name": {
+              "type": "RandomString",
+              "size": 20
+            },
+            "$.user.lastName": {
+              "type": "RandomString",
+              "size": 20
+            },
+            "$.user.address": {
+              "type": "RandomString",
+              "size": 20
+            },
+            "$.user.age": {
+              "type": "RandomInt",
+              "min": 0,
+              "max": 2147483647
+            },
+            "$.user.phoneNumber": {
+              "type": "RandomInt",
+              "min": 0,
+              "max": 2147483647
+            }
+          }
+        }
+      },
+      "providerStates": [
+        {
+          "name": "test consumer service"
+        }
+      ]
+    },
+    {
+      "description": "a request to notify all active clients",
+      "request": {
+        "method": "GET",
+        "path": "/client-provider/clients"
+      },
+      "response": {
+        "status": 200,
+        "headers": {
+          "Content-Type": "application/json"
+        },
+        "body": {
+          "clients": [
+            {
+              "user": {
+                "lastName": "string",
+                "address": "string",
+                "phoneNumber": 100,
+                "name": "string",
+                "age": 100
+              },
+              "activated": true
+            }
+          ]
+        },
+        "matchingRules": {
+          "body": {
+            "$.clients": {
+              "matchers": [
+                {
+                  "match": "type",
+                  "min": 1
+                }
+              ],
+              "combine": "AND"
+            },
+            "$.clients[*].activated": {
+              "matchers": [
+                {
+                  "match": "type"
+                }
+              ],
+              "combine": "AND"
+            },
+            "$.clients[*].user.name": {
+              "matchers": [
+                {
+                  "match": "type"
+                }
+              ],
+              "combine": "AND"
+            },
+            "$.clients[*].user.lastName": {
+              "matchers": [
+                {
+                  "match": "type"
+                }
+              ],
+              "combine": "AND"
+            },
+            "$.clients[*].user.address": {
+              "matchers": [
+                {
+                  "match": "type"
+                }
+              ],
+              "combine": "AND"
+            },
+            "$.clients[*].user.age": {
+              "matchers": [
+                {
+                  "match": "integer"
+                }
+              ],
+              "combine": "AND"
+            },
+            "$.clients[*].user.phoneNumber": {
+              "matchers": [
+                {
+                  "match": "integer"
+                }
+              ],
+              "combine": "AND"
+            }
+          }
+        },
+        "generators": {
+          "body": {
+            "$.clients[*].user.name": {
+              "type": "RandomString",
+              "size": 20
+            },
+            "$.clients[*].user.lastName": {
+              "type": "RandomString",
+              "size": 20
+            },
+            "$.clients[*].user.address": {
+              "type": "RandomString",
+              "size": 20
+            },
+            "$.clients[*].user.age": {
+              "type": "RandomInt",
+              "min": 0,
+              "max": 2147483647
+            },
+            "$.clients[*].user.phoneNumber": {
+              "type": "RandomInt",
+              "min": 0,
+              "max": 2147483647
+            }
+          }
+        }
+      },
+      "providerStates": [
+        {
+          "name": "test consumer service"
+        }
+      ]
+    }
+  ],
+  "metadata": {
+    "pactSpecification": {
+      "version": "3.0.0"
+    },
+    "pact-jvm": {
+      "version": "4.0.2"
+    }
+  }
+}
