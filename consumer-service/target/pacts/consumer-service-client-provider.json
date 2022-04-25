@@ -15,11 +15,11 @@
           "Content-Type": "application/json"
         },
         "body": {
-          "lastName": "xlEaT",
-          "address": "Street OxpuKA",
-          "phoneNumber": 985201621,
-          "name": "ytPCJ",
-          "age": 44
+          "lastName": "YFaVb",
+          "address": "Street MLKOTD",
+          "phoneNumber": 990484515,
+          "name": "LJgyc",
+          "age": 81
         },
         "matchingRules": {
           "body": {
@@ -73,11 +73,11 @@
         },
         "body": {
           "user": {
-            "name": "ytPCJ",
-            "lastName": "xlEaT",
-            "address": "Street OxpuKA",
-            "age": 44,
-            "phoneNumber": 985201621
+            "name": "LJgyc",
+            "lastName": "YFaVb",
+            "address": "Street MLKOTD",
+            "age": 81,
+            "phoneNumber": 990484515
           },
           "activated": true
         }
@@ -98,11 +98,11 @@
         },
         "body": {
           "user": {
-            "lastName": "xlEaT",
-            "address": "Street OxpuKA",
-            "phoneNumber": 985201621,
-            "name": "ytPCJ",
-            "age": 44
+            "lastName": "YFaVb",
+            "address": "Street MLKOTD",
+            "phoneNumber": 990484515,
+            "name": "LJgyc",
+            "age": 81
           },
           "activated": true
         },
@@ -187,7 +187,167 @@
       ]
     },
     {
-      "description": "a request to create a new client",
+      "description": "unsubscription fail",
+      "request": {
+        "method": "DELETE",
+        "path": "/client-provider/client",
+        "headers": {
+          "Content-Type": "application/json"
+        },
+        "body": {
+          "user": {
+            "lastName": "Last Name updated",
+            "address": "Address updated",
+            "phoneNumber": 12345678,
+            "name": "non-exist",
+            "age": 40
+          },
+          "activated": true
+        },
+        "matchingRules": {
+          "body": {
+            "$.user.name": {
+              "matchers": [
+                {
+                  "match": "type"
+                }
+              ],
+              "combine": "AND"
+            },
+            "$.user.lastName": {
+              "matchers": [
+                {
+                  "match": "type"
+                }
+              ],
+              "combine": "AND"
+            },
+            "$.user.address": {
+              "matchers": [
+                {
+                  "match": "type"
+                }
+              ],
+              "combine": "AND"
+            },
+            "$.user.age": {
+              "matchers": [
+                {
+                  "match": "integer"
+                }
+              ],
+              "combine": "AND"
+            },
+            "$.user.phoneNumber": {
+              "matchers": [
+                {
+                  "match": "integer"
+                }
+              ],
+              "combine": "AND"
+            },
+            "$.activated": {
+              "matchers": [
+                {
+                  "match": "type"
+                }
+              ],
+              "combine": "AND"
+            }
+          }
+        }
+      },
+      "response": {
+        "status": 409
+      },
+      "providerStates": [
+        {
+          "name": "test consumer service  -  unsubscription fail"
+        }
+      ]
+    },
+    {
+      "description": "update fail",
+      "request": {
+        "method": "PUT",
+        "path": "/client-provider/client",
+        "headers": {
+          "Content-Type": "application/json"
+        },
+        "body": {
+          "user": {
+            "lastName": "Last Name updated",
+            "address": "Address updated",
+            "phoneNumber": 12345678,
+            "name": "non-exist",
+            "age": 40
+          },
+          "activated": true
+        },
+        "matchingRules": {
+          "body": {
+            "$.user.name": {
+              "matchers": [
+                {
+                  "match": "type"
+                }
+              ],
+              "combine": "AND"
+            },
+            "$.user.lastName": {
+              "matchers": [
+                {
+                  "match": "type"
+                }
+              ],
+              "combine": "AND"
+            },
+            "$.user.address": {
+              "matchers": [
+                {
+                  "match": "type"
+                }
+              ],
+              "combine": "AND"
+            },
+            "$.user.age": {
+              "matchers": [
+                {
+                  "match": "integer"
+                }
+              ],
+              "combine": "AND"
+            },
+            "$.user.phoneNumber": {
+              "matchers": [
+                {
+                  "match": "integer"
+                }
+              ],
+              "combine": "AND"
+            },
+            "$.activated": {
+              "matchers": [
+                {
+                  "match": "type"
+                }
+              ],
+              "combine": "AND"
+            }
+          }
+        }
+      },
+      "response": {
+        "status": 409
+      },
+      "providerStates": [
+        {
+          "name": "test consumer service  -  update fail"
+        }
+      ]
+    },
+    {
+      "description": "a request to create a new client to update",
       "request": {
         "method": "POST",
         "path": "/client-provider/client",
@@ -195,11 +355,11 @@
           "Content-Type": "application/json"
         },
         "body": {
-          "lastName": "AXzIC",
-          "address": "Street etWHme",
-          "phoneNumber": 956073826,
-          "name": "gyFtx",
-          "age": 40
+          "lastName": "PQGvg",
+          "address": "Street vMahJk",
+          "phoneNumber": 965231774,
+          "name": "grPCv",
+          "age": 34
         },
         "matchingRules": {
           "body": {
@@ -253,11 +413,238 @@
         },
         "body": {
           "user": {
-            "name": "gyFtx",
-            "lastName": "AXzIC",
-            "address": "Street etWHme",
-            "age": 40,
-            "phoneNumber": 956073826
+            "name": "grPCv",
+            "lastName": "PQGvg",
+            "address": "Street vMahJk",
+            "age": 34,
+            "phoneNumber": 965231774
+          },
+          "activated": true
+        }
+      },
+      "providerStates": [
+        {
+          "name": "test consumer service  -  update subscription"
+        }
+      ]
+    },
+    {
+      "description": "update a client",
+      "request": {
+        "method": "PUT",
+        "path": "/client-provider/client",
+        "headers": {
+          "Content-Type": "application/json"
+        },
+        "body": {
+          "user": {
+            "lastName": "Last Name updated",
+            "address": "Address updated",
+            "phoneNumber": 965231674,
+            "name": "grPCv",
+            "age": 35
+          },
+          "activated": true
+        },
+        "matchingRules": {
+          "body": {
+            "$.user.name": {
+              "matchers": [
+                {
+                  "match": "type"
+                }
+              ],
+              "combine": "AND"
+            },
+            "$.user.lastName": {
+              "matchers": [
+                {
+                  "match": "type"
+                }
+              ],
+              "combine": "AND"
+            },
+            "$.user.address": {
+              "matchers": [
+                {
+                  "match": "type"
+                }
+              ],
+              "combine": "AND"
+            },
+            "$.user.age": {
+              "matchers": [
+                {
+                  "match": "integer"
+                }
+              ],
+              "combine": "AND"
+            },
+            "$.user.phoneNumber": {
+              "matchers": [
+                {
+                  "match": "integer"
+                }
+              ],
+              "combine": "AND"
+            },
+            "$.activated": {
+              "matchers": [
+                {
+                  "match": "type"
+                }
+              ],
+              "combine": "AND"
+            }
+          }
+        }
+      },
+      "response": {
+        "status": 200,
+        "headers": {
+          "Content-Type": "application/json"
+        },
+        "body": {
+          "user": {
+            "lastName": "Last Name updated",
+            "address": "Address updated",
+            "phoneNumber": 965231674,
+            "name": "grPCv",
+            "age": 35
+          },
+          "activated": true
+        },
+        "matchingRules": {
+          "body": {
+            "$.user.name": {
+              "matchers": [
+                {
+                  "match": "type"
+                }
+              ],
+              "combine": "AND"
+            },
+            "$.user.lastName": {
+              "matchers": [
+                {
+                  "match": "type"
+                }
+              ],
+              "combine": "AND"
+            },
+            "$.user.address": {
+              "matchers": [
+                {
+                  "match": "type"
+                }
+              ],
+              "combine": "AND"
+            },
+            "$.user.age": {
+              "matchers": [
+                {
+                  "match": "integer"
+                }
+              ],
+              "combine": "AND"
+            },
+            "$.user.phoneNumber": {
+              "matchers": [
+                {
+                  "match": "integer"
+                }
+              ],
+              "combine": "AND"
+            },
+            "$.activated": {
+              "matchers": [
+                {
+                  "match": "type"
+                }
+              ],
+              "combine": "AND"
+            }
+          }
+        }
+      },
+      "providerStates": [
+        {
+          "name": "test consumer service  -  update subscription"
+        }
+      ]
+    },
+    {
+      "description": "a request to create a new client",
+      "request": {
+        "method": "POST",
+        "path": "/client-provider/client",
+        "headers": {
+          "Content-Type": "application/json"
+        },
+        "body": {
+          "lastName": "xnxWa",
+          "address": "Street IljCXB",
+          "phoneNumber": 928015550,
+          "name": "WwvLf",
+          "age": 43
+        },
+        "matchingRules": {
+          "body": {
+            "$.name": {
+              "matchers": [
+                {
+                  "match": "type"
+                }
+              ],
+              "combine": "AND"
+            },
+            "$.lastName": {
+              "matchers": [
+                {
+                  "match": "type"
+                }
+              ],
+              "combine": "AND"
+            },
+            "$.address": {
+              "matchers": [
+                {
+                  "match": "type"
+                }
+              ],
+              "combine": "AND"
+            },
+            "$.age": {
+              "matchers": [
+                {
+                  "match": "integer"
+                }
+              ],
+              "combine": "AND"
+            },
+            "$.phoneNumber": {
+              "matchers": [
+                {
+                  "match": "integer"
+                }
+              ],
+              "combine": "AND"
+            }
+          }
+        }
+      },
+      "response": {
+        "status": 200,
+        "headers": {
+          "Content-Type": "application/json"
+        },
+        "body": {
+          "user": {
+            "name": "WwvLf",
+            "lastName": "xnxWa",
+            "address": "Street IljCXB",
+            "age": 43,
+            "phoneNumber": 928015550
           },
           "activated": true
         }

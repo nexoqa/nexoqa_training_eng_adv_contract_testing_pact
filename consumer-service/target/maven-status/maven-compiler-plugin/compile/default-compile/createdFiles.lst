@@ -1,6 +1,7 @@
 com/nexoqa/model/Clients.class
 com/nexoqa/Application.class
 com/nexoqa/controller/UserController.class
+com/nexoqa/service/UpdateSubscriptionService.class
 com/nexoqa/model/DeleteResponse.class
 com/nexoqa/RestConfig.class
 com/nexoqa/model/User.class

@@ -17,6 +17,7 @@ import java.util.Optional;
 import static org.springframework.web.bind.annotation.RequestMethod.GET;
 import static org.springframework.web.bind.annotation.RequestMethod.POST;
 import static org.springframework.web.bind.annotation.RequestMethod.DELETE;
+import static org.springframework.web.bind.annotation.RequestMethod.PUT;
 
 @RestController
 public class ClientController {
@@ -57,11 +58,29 @@ public class ClientController {
         if (clientService.isRegistered(user.getName())) {
             return ResponseEntity.status(HttpStatus.CONFLICT).build();
         } else {
-            clientService.createClient(user);
+            Client client = clientService.createClient(user);
             return ResponseEntity
                     .ok()
                     .header("Content-type", "application/json")
-                    .body(clientService.createClient(user));
+                    .body(client);
+        }
+
+    }
+
+    @RequestMapping(value = "/client", method = PUT, produces = "application/json")
+    private @ResponseBody
+            ResponseEntity<Client> updateClient(@RequestBody Client client) {
+        logger.info("update client -> " + client.toString());
+
+        if (clientService.isRegistered(client.getUser().getName())) {
+            Client updatedClient = clientService.updateClient(client);
+            return ResponseEntity
+                    .ok()
+                    .header("Content-type", "application/json")
+                    .body(updatedClient);
+        } else {
+            return ResponseEntity.status(HttpStatus.CONFLICT).build();
+            
         }
 
     }
@@ -82,6 +101,5 @@ public class ClientController {
         }
 
     }
-
 
 }

@@ -2,6 +2,7 @@ package com.nexoqa.model;
 
 import lombok.*;
 
+@Setter
 @Getter
 @AllArgsConstructor
 @NoArgsConstructor

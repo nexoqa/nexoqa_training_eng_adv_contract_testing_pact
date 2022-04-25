@@ -4,6 +4,7 @@
 /Users/yc00043/nexoqa/nexoqa_training_eng_adv_contract_testing_pact/consumer-service/src/main/java/com/nexoqa/Application.java
 /Users/yc00043/nexoqa/nexoqa_training_eng_adv_contract_testing_pact/consumer-service/src/main/java/com/nexoqa/model/DeleteResponse.java
 /Users/yc00043/nexoqa/nexoqa_training_eng_adv_contract_testing_pact/consumer-service/src/main/java/com/nexoqa/model/Clients.java
+/Users/yc00043/nexoqa/nexoqa_training_eng_adv_contract_testing_pact/consumer-service/src/main/java/com/nexoqa/service/UpdateSubscriptionService.java
 /Users/yc00043/nexoqa/nexoqa_training_eng_adv_contract_testing_pact/consumer-service/src/main/java/com/nexoqa/service/EmailService.java
 /Users/yc00043/nexoqa/nexoqa_training_eng_adv_contract_testing_pact/consumer-service/src/main/java/com/nexoqa/SwaggerConfig.java
 /Users/yc00043/nexoqa/nexoqa_training_eng_adv_contract_testing_pact/consumer-service/src/main/java/com/nexoqa/service/SubscriberService.java

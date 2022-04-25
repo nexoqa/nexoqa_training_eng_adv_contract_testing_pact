@@ -40,4 +40,16 @@ public class PactClientProviderTest {
     public void toGetStateUnSubscribe() {
     }
 
+    @State("test consumer service  -  update subscription")
+    public void toGetStateUpdateSubscription() {
+    }
+
+    @State("test consumer service  -  update fail")
+    public void toGetStateUpdateSubscriptionFail() {
+    }
+
+    @State("test consumer service  -  unsubscription fail")
+    public void toGetStateUnSubscribeFail() {
+    }
+
 }

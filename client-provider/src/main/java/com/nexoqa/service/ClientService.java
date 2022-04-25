@@ -58,4 +58,9 @@ public class ClientService {
         return cli == null;
     }
 
+    public Client updateClient(Client client) {
+        insertClient(client);
+        return getClient(client.getUser().getName());
+    }
+
 }
