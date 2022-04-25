@@ -52,4 +52,10 @@ public class ClientService {
         return clients.get(name);
     }
 
+    public boolean deleteClient(Client client) {
+        clients.remove(client.getUser().getName().toLowerCase(), client);
+        Client cli = getClient(client.getUser().getName());
+        return cli == null;
+    }
+
 }

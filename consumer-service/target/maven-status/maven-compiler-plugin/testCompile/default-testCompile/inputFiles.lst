@@ -1,4 +1,4 @@
-/Users/toni.robres/javaprojects/pact-contract-lab-nexoqa/consumer-service/src/test/java/com/nexoqa/utils/BuilderUtils.java
-/Users/toni.robres/javaprojects/pact-contract-lab-nexoqa/consumer-service/src/test/java/com/nexoqa/builder/SubscribersBuilder.java
-/Users/toni.robres/javaprojects/pact-contract-lab-nexoqa/consumer-service/src/test/java/com/nexoqa/builder/ClientBuilder.java
-/Users/toni.robres/javaprojects/pact-contract-lab-nexoqa/consumer-service/src/test/java/com/nexoqa/pact/PactConsumerContractTest.java
+/Users/yc00043/nexoqa/nexoqa_training_eng_adv_contract_testing_pact/consumer-service/src/test/java/com/nexoqa/builder/SubscribersBuilder.java
+/Users/yc00043/nexoqa/nexoqa_training_eng_adv_contract_testing_pact/consumer-service/src/test/java/com/nexoqa/utils/BuilderUtils.java
+/Users/yc00043/nexoqa/nexoqa_training_eng_adv_contract_testing_pact/consumer-service/src/test/java/com/nexoqa/builder/ClientBuilder.java
+/Users/yc00043/nexoqa/nexoqa_training_eng_adv_contract_testing_pact/consumer-service/src/test/java/com/nexoqa/pact/PactConsumerContractTest.java

@@ -1,9 +1,11 @@
+com/nexoqa/model/Clients.class
+com/nexoqa/Application.class
+com/nexoqa/controller/UserController.class
+com/nexoqa/model/DeleteResponse.class
 com/nexoqa/RestConfig.class
 com/nexoqa/model/User.class
-com/nexoqa/model/Clients.class
+com/nexoqa/service/UnSubscriberService.class
 com/nexoqa/model/Client.class
-com/nexoqa/Application.class
 com/nexoqa/SwaggerConfig.class
 com/nexoqa/service/SubscriberService.class
 com/nexoqa/service/EmailService.class
-com/nexoqa/controller/UserController.class

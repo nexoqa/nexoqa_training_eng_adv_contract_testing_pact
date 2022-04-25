@@ -32,8 +32,12 @@ public class PactClientProviderTest {
         application = (ConfigurableWebApplicationContext) SpringApplication.run(Application.class);
     }
 
-    @State("test consumer service")
-    public void toGetState() {
+    @State("test consumer service -  subscribe")
+    public void toGetStateSubscribe() {
+    }
+
+    @State("test consumer service  -  unsubscribe")
+    public void toGetStateUnSubscribe() {
     }
 
 }

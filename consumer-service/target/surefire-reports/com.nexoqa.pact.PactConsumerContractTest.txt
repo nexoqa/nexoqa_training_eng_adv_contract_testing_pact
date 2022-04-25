@@ -1,4 +1,4 @@
 -------------------------------------------------------------------------------
 Test set: com.nexoqa.pact.PactConsumerContractTest
 -------------------------------------------------------------------------------
-Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 4.261 s - in com.nexoqa.pact.PactConsumerContractTest
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 12.271 s - in com.nexoqa.pact.PactConsumerContractTest
