@@ -31,3 +31,5 @@ consumer-service/target/
 
 #idea
 .idea/
+.vscode/
+

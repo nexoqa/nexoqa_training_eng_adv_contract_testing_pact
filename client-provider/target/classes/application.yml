@@ -1,8 +1,0 @@
-server:
-  servlet:
-    contextPath: /client-provider
-    port: 8081
-
-management:
-  port: 8081
-  address: 127.0.0.1
