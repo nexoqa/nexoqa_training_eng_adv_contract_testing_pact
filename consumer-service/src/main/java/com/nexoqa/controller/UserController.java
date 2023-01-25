@@ -29,7 +29,7 @@ public class UserController {
         return subscriberService.subscribeUser(user);
     }
 
-    @RequestMapping(value = "/unsubscribe", method = DELETE, produces = "application/json")
+    @RequestMapping(value = "/subscribe", method = DELETE, produces = "application/json")
     private ResponseEntity<Void> unSubscribeUser(@RequestBody User user) {
         return subscriberService.unSubscribeUser(user);
     }

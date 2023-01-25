@@ -154,6 +154,27 @@ public class PactConsumerContractTest {
                     .toPact();
     }
 
+    @Pact(provider = "client-provider", consumer = "consumer-service")
+    public RequestResponsePact unSubscribeFailPact(PactDslWithProvider builder) {
+        Map<String, String> headers = new HashMap<>();
+        headers.put("Content-Type", "application/json");
+
+        testClientsData = subscribersBuilder.build();
+
+
+        return builder
+                .given("unsubscribe consumer service fail")
+                .uponReceiving("unsubscribe user fail")
+                .path(END_POINT_CLIENT)
+                .headers(headers)
+                .body(new Gson().toJson(testClientsData.getClients().get(0).getUser(), User.class))
+                .method("DELETE")
+                .willRespondWith()
+                .status(409)
+                .toPact();
+    }
+
+
     @Test
     @PactVerification(value = "client-provider", fragment = "createPact")
     public void runTest() {
@@ -180,5 +201,14 @@ public class PactConsumerContractTest {
         assertTrue(unSubscribeClient.getStatusCode().is2xxSuccessful());
     }
 
+    @Test
+    @PactVerification(value = "client-provider", fragment = "unSubscribeFailPact")
+    public void runUnSubscribeTestFail() {
+        MockServer server = rule.getMockServer();
+        subscriberService.setBackendURL("http://localhost:" + server.getPort());
+
+        ResponseEntity<Void> unSubscribeClient = subscriberService.unSubscribeUser(testClientsData.getClients().get(0).getUser());
+        assertTrue(unSubscribeClient.getStatusCode().is4xxClientError());
+    }
 
 }

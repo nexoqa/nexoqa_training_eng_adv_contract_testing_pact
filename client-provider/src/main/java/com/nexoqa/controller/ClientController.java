@@ -70,9 +70,10 @@ public class ClientController {
 
         if (clientService.isRegistered(user.getName())) {
             clientService.removeClient(user);
-
+            return ResponseEntity.status(HttpStatus.OK).build();
+        }else {
+            return ResponseEntity.status(HttpStatus.CONFLICT).build();
         }
-        return ResponseEntity.status(HttpStatus.OK).build();
     }
 
 }
