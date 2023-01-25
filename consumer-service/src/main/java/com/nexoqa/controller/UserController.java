@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.List;
 
 import static org.springframework.web.bind.annotation.RequestMethod.POST;
+import static org.springframework.web.bind.annotation.RequestMethod.DELETE;
 
 @RestController
 public class UserController {
@@ -26,6 +27,11 @@ public class UserController {
     @RequestMapping(value = "/subscribe", method = POST, produces = "application/json")
     private ResponseEntity<Client> subscribeUser(@RequestBody User user) {
         return subscriberService.subscribeUser(user);
+    }
+
+    @RequestMapping(value = "/unsubscribe", method = DELETE, produces = "application/json")
+    private ResponseEntity<Void> unSubscribeUser(@RequestBody User user) {
+        return subscriberService.unSubscribeUser(user);
     }
 
     @RequestMapping(value = "/email/send", method = POST, produces = "application/json")

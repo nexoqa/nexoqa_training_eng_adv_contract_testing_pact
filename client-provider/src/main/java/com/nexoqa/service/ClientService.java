@@ -52,4 +52,8 @@ public class ClientService {
         return clients.get(name);
     }
 
+    public void removeClient(User user){
+        clients.remove(user.getName());
+    }
+
 }

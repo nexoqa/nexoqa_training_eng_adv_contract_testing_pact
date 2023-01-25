@@ -13,8 +13,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.Optional;
 
-import static org.springframework.web.bind.annotation.RequestMethod.GET;
-import static org.springframework.web.bind.annotation.RequestMethod.POST;
+import static org.springframework.web.bind.annotation.RequestMethod.*;
 
 @RestController
 public class ClientController {
@@ -64,5 +63,16 @@ public class ClientController {
 
     }
 
+    @RequestMapping(value = "/client", method = DELETE, produces = "application/json")
+    private @ResponseBody
+    ResponseEntity<Client> deleteClient(@RequestBody User user) {
+        logger.info("creating client -> " + user.toString());
+
+        if (clientService.isRegistered(user.getName())) {
+            clientService.removeClient(user);
+
+        }
+        return ResponseEntity.status(HttpStatus.OK).build();
+    }
 
 }
